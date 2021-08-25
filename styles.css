@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  background-color: rgb(255, 208, 0);
+}
+
+/* FOUNDATIONAL STYLES*/
+
+#bigContainer {
+  display: flex;
+
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#logo {
+  display: flex;
+  margin-left: 50px;
+  margin-top: 20px;
+  height: 100px;
+  cursor: pointer;
+}
+
+#signUpHeader {
+  position: absolute;
+  margin-top: -4.5em;
+  cursor: default;
+}
+hr {
+  width: 250px;
+  border: 2px solid rgb(255, 208, 0);
+  position: absolute;
+  margin-top: -7.5em;
+  z-index: 1;
+}
+#container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: 2em;
+  background-color: white;
+  height: 500px;
+  width: 500px;
+}
+
+#signUpBox {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-family: "Noto Sans", sans-serif;
+}
+
+input {
+  font-size: 20px;
+  padding-left: 10px;
+  border: 1px solid rgb(255, 208, 0);
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: solid rgb(255, 208, 0);
+}
+
+#mainButtonDiv {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#mainButton {
+  border: none;
+  box-shadow: none;
+  color: white;
+  background-color: rgb(56, 56, 56);
+  height: 30px;
+  width: 90px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+#logInButton {
+  position: absolute;
+  border: none;
+  box-shadow: none;
+  color: white;
+  background-color: rgb(56, 56, 56);
+  height: 30px;
+  width: 90px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+#logInButton:hover {
+  height: 35px;
+  width: 95px;
+  background-color: rgb(134, 212, 134);
+}
+
+#mainButton:hover {
+  background-color: rgb(255, 208, 0);
+  color: black;
+}
+
+/*error styles*/
+
+#errorContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: rgb(255, 53, 53);
+  color: white;
+  border-radius: 5px;
+  height: 70px;
+  width: 300px;
+  opacity: 0%;
+  transition: all 1s ease;
+  margin-top: 16em;
+  margin-left: 5px;
+}
+
+.errorView {
+  transition: all 1s ease;
+  animation: error 0.4s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes error {
+  0% {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 80;
+    transform: translateY(-100%);
+  }
+}
