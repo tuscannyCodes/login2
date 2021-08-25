@@ -136,7 +136,7 @@ input:focus {
   width: 300px;
   opacity: 0%;
   transition: all 1s ease;
-  margin-top: 16em;
+  margin-top: 20em;
   margin-left: 5px;
 }
 
@@ -149,7 +149,7 @@ input:focus {
 @keyframes error {
   0% {
     opacity: 0;
-    transform: translateY(-50%);
+    transform: translateY(-0%);
   }
   100% {
     opacity: 80;
