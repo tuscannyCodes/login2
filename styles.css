@@ -227,25 +227,25 @@ input:focus {
 @-webkit-keyframes error {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
   }
   100% {
     opacity: 80;
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
 @keyframes error {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
   }
   100% {
     opacity: 80;
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
