@@ -24,108 +24,112 @@ let timeToLogIn = 0;
 
 //VARIABLES END
 //MAIN FUNCTION
-const signUpToday = () =>{
+const signUpToday = () => {
 
 
-if(emailBox.value.includes("@") &&  emailBox.value.includes(".com"))
-//EMAIL
-{
-    email=emailBox.value; 
-    
-}
-if(email == false){
-    errorMessageBox.classList.add("errorView")
-    errorMessage.innerHTML= "Please enter a valid email";
-    userName = false;
-    password = false;
+    if (emailBox.value.includes("@") && emailBox.value.includes(".com"))
+    //EMAIL
+    {
+        email = emailBox.value;
 
-};
-//USERNAME
-if(userNameBox.value != "")
-{
+    }
+    if (email == false) {
+        errorMessageBox.classList.add("errorView")
+        errorMessage.innerHTML = "Please enter a valid email";
+        userName = false;
+        password = false;
 
-    userName = userNameBox.value;
-    
-   console.log(userName);
-}
-if(userNameBox.value === ""){
-errorMessageBox.classList.add("errorView")
-errorMessage.innerHTML= "Please enter a Username";
-email = false;
-password = false;
+    };
+    //USERNAME
+    if (userNameBox.value != "") {
 
-};
-//PASSWORD
-if(passwordBox.value.length > 7){
+        userName = userNameBox.value;
 
-    password= passwordBox.value;
-   
-   
-}
-if(passwordBox.value.length < 7){
-    errorMessageBox.classList.add("errorView")
-    errorMessage.innerHTML= "Password must be at least 7 characters";
-    userName = false;
-    email = false;
-};
+        console.log(userName);
+    }
+    if (userNameBox.value === "") {
+        errorMessageBox.classList.add("errorView")
+        errorMessage.innerHTML = "Please enter a Username";
+        email = false;
+        password = false;
 
-if(passwordBox.value == "" && userNameBox.value === "" && emailBox.value == ""){
+    };
+    //PASSWORD
+    if (passwordBox.value.length > 7) {
 
-    errorMessageBox.classList.add("errorView")
-    errorMessage.innerHTML= "Please enter the required fields";
-}
+        password = passwordBox.value;
 
 
+    }
+    if (passwordBox.value.length < 7) {
+        errorMessageBox.classList.add("errorView")
+        errorMessage.innerHTML = "Password must be at least 7 characters";
+        userName = false;
+        email = false;
+    };
 
-//ERROR MESSAGE NULL
-setTimeout(function(){
-    errorMessageBox.classList.remove("errorView")
-}, 3000)
-//LOG IN FUNCTIONALITY
-if(password && userName && email) {
-    
-    emailBox.value = "";
-    userNameBox.value = "";
-    passwordBox.value = "";
-    signUpHeader.innerHTML = "log In"
-    signUpBox.removeChild(emailBox);
-    mainButtonDiv.removeChild(mainButton);
-    passwordBox.setAttribute("type","password")
-    
-// LETS CREATE LOG IN BUTTON 
-    let logInButton = document.createElement("button"); 
-    logInButton.innerHTML = "Log In";
-    logInButton.setAttribute("id","logInButton")
-    mainButtonDiv.appendChild(logInButton);
-    logInButton.addEventListener("click", logIn);
+    if (passwordBox.value == "" && userNameBox.value === "" && emailBox.value == "") {
 
-	timeToLogIn = 1;
-    console.log(userName)   
+        errorMessageBox.classList.add("errorView")
+        errorMessage.innerHTML = "Please enter the required fields";
+    }
+
+    if (errorMessageBox.classList.contains("errorView")) {
+
+        errorMessageBox.style.display = "flex";
+    } else {
+
+        errorMessageBox.style.display = "none";
+    }
+
+    //ERROR MESSAGE NULL
+    setTimeout(function () {
+        errorMessageBox.classList.remove("errorView")
+    }, 3000)
+    //LOG IN FUNCTIONALITY
+    if (password && userName && email) {
+
+        emailBox.value = "";
+        userNameBox.value = "";
+        passwordBox.value = "";
+        signUpHeader.innerHTML = "log In"
+        signUpBox.removeChild(emailBox);
+        mainButtonDiv.removeChild(mainButton);
+        passwordBox.setAttribute("type", "password")
+
+        // LETS CREATE LOG IN BUTTON 
+        let logInButton = document.createElement("button");
+        logInButton.innerHTML = "Log In";
+        logInButton.setAttribute("id", "logInButton")
+        mainButtonDiv.appendChild(logInButton);
+        logInButton.addEventListener("click", logIn);
+
+        timeToLogIn = 1;
+        console.log(userName)
     }
 }
 
 
 
 function logIn() {
-if(timeToLogIn === 1 && userNameBox.value === userName && passwordBox.value === password){
-console.log("goodtogo")
-window.open('https://designamite.co.uk','_blank');
+    if (timeToLogIn === 1 && userNameBox.value === userName && passwordBox.value === password) {
+        console.log("goodtogo")
+        window.open('https://designamite.co.uk', '_blank');
 
 
-}else{
-    errorMessageBox.classList.add("errorView")
-    errorMessage.innerHTML= "Password or username is incorrect" 
-    setTimeout(function(){
-        errorMessageBox.classList.remove("errorView")
-    }, 3000)
-}
-console.log(userName)
+    } else {
+        errorMessageBox.classList.add("errorView")
+        errorMessage.innerHTML = "Password or username is incorrect"
+        setTimeout(function () {
+            errorMessageBox.classList.remove("errorView")
+        }, 3000)
+    }
+    console.log(userName)
 }
 //MAIN FUNCTION END
 
 
 
-mainButton.addEventListener("click",signUpToday);
+mainButton.addEventListener("click", signUpToday);
 
 
-  
