@@ -74,13 +74,7 @@ const signUpToday = () => {
         errorMessage.innerHTML = "Please enter the required fields";
     }
 
-    if (errorMessageBox.classList.contains("errorView")) {
 
-        errorMessageBox.style.display = "flex";
-    } else {
-
-        errorMessageBox.style.display = "none";
-    }
 
     //ERROR MESSAGE NULL
     setTimeout(function () {
